@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocks</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        div.row {
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        div.rowSpace {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        /* Row 1 */
+        .row1-red {
+            background-color: red;
+            width: 50%;
+            height: 40px;
+        }
+        
+        .row1-blue {
+            background-color: blue;
+            width: 50%;
+            height: 40px;
+        }
+        
+        /* Row 2 */
+        .row2-green {
+            background-color: green;
+            width: 95%;
+            height: 40px;
+        }
+        
+        .row2-blue {
+            background-color: blue;
+            width: 5%;
+            height: 40px;
+        }
+        
+        /* Row 3 */
+        .row3-red {
+            background-color: red;
+            width: 5%;
+            height: 40px;
+        }
+        
+        .row3-green {
+            background-color: green;
+            width: 90%;
+            height: 40px;
+        }
+        
+        .row3-blue {
+            background-color: blue;
+            width: 5%;
+            height: 40px;
+        }
+        
+        /* Row 4 */
+        .row4-red {
+            background-color: red;
+            width: 95%;
+            height: 40px;
+        }
+        
+        .row4-blue {
+            background-color: blue;
+            width: 5%;
+            height: 40px;
+        }
+        
+        /* Row 5 */
+        .row5-green {
+            background-color: green;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .row5-red-center {
+            background-color: red;
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* Row 6 */
+        .row6-red-left {
+            background-color: red;
+            width: 48%;
+            height: 40px;
+        }
+        
+        .row6-blue {
+            background-color: blue;
+            width: 4%;
+            height: 40px;
+        }
+        
+        .row6-red-right {
+            background-color: red;
+            width: 48%;
+            height: 40px;
+        }
+        
+        /* Row 7 */
+        .row7-red {
+            background-color: red;
+            width: 5%;
+            height: 40px;
+        }
+        
+        .row7-blue {
+            background-color: blue;
+            width: 95%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row-green-center{
+            width: 100%; 
+            background-color: green; 
+            height: 12px;
+        }
+        
+        /* Row 8 */
+        .row8-block {
+            height: 40px;
+        }
+        
+        .row8-orange {
+            background-color: orange;
+            width: 6%;
+        }
+        
+        .row8-green {
+            background-color: green;
+            width: 19%;
+        }
+        
+        /* Row 9 */
+        .row9-orange {
+            background-color: orange;
+            width: 85%;
+            height: 40px;
+        }
+        
+        .row9-green {
+            background-color: green;
+            width: 2.5%;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="row">Row 1</div>
+    <div class="rowSpace">
+        <div class="row1-red"></div>
+        <div class="row1-blue"></div>
+    </div>
+    
+    <div class="row">Row 2</div>
+    <div class="rowSpace">
+        <div class="row2-green"></div>
+        <div class="row2-blue"></div>
+    </div>
+    
+    <div class="row">Student TODOs</div>
+    
+    <div class="row">Row 3</div>
+    <div class="rowSpace">
+        <div class="row3-red"></div>
+        <div class="row3-green"></div>
+        <div class="row3-blue"></div>
+    </div>
+    
+    <div class="row">Row 4</div>
+    <div class="rowSpace">
+        <div class="row4-red"></div>
+        <div class="row4-blue"></div>
+    </div>
+    
+    <div class="row">Row 5</div>
+    <div class="rowSpace">
+        <div class="row5-green">
+            <div class="row5-red-center"></div>
+        </div>
+    </div>
+    
+    <div class="row">Row 6</div>
+    <div class="rowSpace">
+        <div class="row6-red-left"></div>
+        <div class="row6-blue"></div>
+        <div class="row6-red-right"></div>
+    </div>
+    
+    <div class="row">Row 7</div>
+    <div class="rowSpace">
+        <div class="row7-red"></div>
+        <div class="row7-blue">
+            <div class ="row-green-center"></div>
+        </div>
+        
+    </div>
+    
+    <div class="row">Row 8</div>
+    <div class="rowSpace">
+        <div class="row8-block row8-orange"></div>
+        <div class="row8-block row8-green"></div>
+        <div class="row8-block row8-orange"></div>
+        <div class="row8-block row8-green"></div>
+        <div class="row8-block row8-orange"></div>
+        <div class="row8-block row8-green"></div>
+        <div class="row8-block row8-orange"></div>
+        <div class="row8-block row8-green"></div>
+        <div class="row8-block row8-orange"></div>
+
+    </div>
+    
+    <div class="row">Row 9</div>
+    <div class="rowSpace">
+        <div class="row9-orange"></div>
+        <div class="row9-green"></div>
+        <div class="row9-orange"></div>
+        <div class="row9-green"></div>
+        <div class="row9-orange"></div>
+        <div class="row9-green"></div>
+        <div class="row9-orange"></div>
+        <div class="row9-green"></div>
+        <div class="row9-orange"></div>        
+    </div>
+</body>
+</html>
