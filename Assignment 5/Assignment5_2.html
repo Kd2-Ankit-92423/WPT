@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function getNumber(promptMessage){
+    let num
+do{
+    num = prompt(promptMessage)
+    if(num==null)
+    return null;
+    if(isNaN(num) || num<=0){
+        alert("Please enter a valid positive integer!")
+        num = null;
+    }
+}while(num==null)
+return num;
+}
+let num = getNumber("Enter the number of times to print the message: ")
+if(num == null){
+    alert("Cancelled")
+}else{
+let message = prompt("Enter the message: ");
+if(message ==null){
+    alert("Cancelled")
+}else{
+for(let i = 0; i<num; i++){
+    console.log(message)
+}
+}
+} 
+</script>
+</body>
+</html>

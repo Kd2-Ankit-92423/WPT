@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment4</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: grey;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: #333;
+    }
+
+    .navbar-brand {
+      color: white;
+    }
+
+    .sticky-note {
+      width: 220px;
+      height: 220px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 15px;
+      position: relative;
+    }
+
+    .note-header {
+      font-size: 12;
+      font-weight: bold;
+      color: #333;
+      background-color: transparent;
+      padding: 35px 12px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .close-btn {
+      position: absolute;
+      top:-1px;
+      right: 5px;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+    }
+
+    .note-text {
+      width: 100%;
+      height: 130px;
+      resize: none;
+      border: none;
+      background-color: transparent;
+      padding: 8px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    .note-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">HTML5Sticky</a>
+      <div class="ms-auto d-flex">
+        <a class="nav-link" href="#">⚙️</a>
+        <a class="nav-link" href="#" style="color: red;"> ✖ </button></a>
+        <a class="btn btn-warning btn-sm" href="#"> Donate </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <div class="note-grid">
+
+      <!-- Note 1 -->
+      <div class="sticky-note" style="background-image: url(https://img.freepik.com/premium-photo/note-paper-with-push-pin-3d-illustration_118019-6633.jpg);">
+        <div class="note-header">10 Oct 4:30 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+      <!-- Note 2 -->
+      <div class="sticky-note" style="background-image: url(https://img.freepik.com/premium-vector/vector-illustration-colored-note-paper-with-push-pin-isolated-white_21336-4797.jpg);">
+        <div class="note-header">10 Oct 4:31 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+      <!-- Note 3 -->
+      <div class="sticky-note" style="background-image: url(https://media.istockphoto.com/photos/green-square-sticky-note-with-a-pink-pin-isolated-picture-id458865339?k=6&m=458865339&s=612x612&w=0&h=ylPdBJ1LEVFq5x1TKOq9xxZi60oW8k4LYlB1wgGnKTY=);">
+        <div class="note-header">10 Oct 4:32 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+      <!-- Note 4 -->
+        <div class="sticky-note" style="background-image: url(https://tse3.mm.bing.net/th/id/OIP.8ejAK8-kDh38MCBxsH3xUAHaHa?cb=12&pid=ImgDet&w=175&h=175&c=7&dpr=1.5&o=7&rm=3);">
+        <div class="note-header">12 Oct 10:33 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+      <!-- Note 5 -->
+        <div class="sticky-note" style="background-image: url(https://tse2.mm.bing.net/th/id/OIP.hORwbqybdohHLjcx4cgOGgHaHa?cb=12&pid=ImgDet&w=175&h=175&c=7&dpr=1.5&o=7&rm=3);">
+        <div class="note-header">12 Oct 10:34 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+      <!-- Note 6 -->
+      <div class="sticky-note" style="background-image: url(https://img.freepik.com/premium-photo/3d-note-paper-sticky-note-3d-illustration_115990-1076.jpg?w=996);">
+        <div class="note-header">12 Oct 10:35 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+      <!-- Note 7 -->
+      <div class="sticky-note" style="background-image: url(https://img.freepik.com/premium-photo/note-paper-with-push-pin-3d-illustration_118019-10316.jpg);">
+        <div class="note-header">12 Oct 10:36 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+      <!-- Note 8 -->
+      <div class="sticky-note" style="background-image: url(https://tse2.mm.bing.net/th/id/OIP.xPdbUUoFmVpciHNHORx1RgHaHa?cb=12&pid=ImgDet&w=175&h=175&c=7&dpr=1.5&o=7&rm=3);">
+        <div class="note-header">12 Oct 10:37 AM</div>
+        <div class="close-btn">✖</div>
+        <textarea class="note-text" placeholder="Text Here"></textarea>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

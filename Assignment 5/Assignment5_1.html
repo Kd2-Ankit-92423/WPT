@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+function getNumber(message) {
+  let num;
+  do {
+    num = prompt(message);
+    if (num == null) return null;
+    //num = Number(num);
+    if (isNaN(num) || num <= 0 || (!(typeof(num=="number")))) {
+      alert("Enter valid number.");
+      num = null;
+    }
+  } while (num == null);
+  return num;
+}
+
+const n1 = getNumber("Enter first positive number:");
+if (n1 !== null) {
+  const n2 = getNumber("Enter second positive number:");
+  if (n2 !== null) {
+    const n3 = getNumber("Enter third positive number:");
+    if (n3 !== null) {
+      alert("The largest number is: " + Math.max(n1, n2, n3));
+    }
+  }
+}
+</script>   
+</body>
+</html>
