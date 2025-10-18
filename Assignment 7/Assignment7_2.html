@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment7_2</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enter Employees Name</h2>
+  <input type="text" id="empName" placeholder="Enter employee name" />
+  <div>
+    <button onclick="addName()">Add Name</button>
+    <button onclick="showSorted()">Sort &amp; Dispay</button>
+  </div>
+  <div id="output"></div>
+
+  <script>
+    const employees = [];
+
+    function addName() {
+      const nameInput = document.getElementById('empName');
+      const name = nameInput.value.trim();
+
+      if (!name) {
+        alert('Please enter a name.');
+        return;
+      }
+
+      if (employees.length >= 6) {
+        alert('You have already entered 6 names.');
+        nameInput.value = '';
+        return;
+      }
+
+      employees.push(name);
+      nameInput.value = '';
+      alert(`Name "${name}" added successfully.`);
+    }
+
+    function showSorted() {
+      if (employees.length == 0) {
+        alert('No names entered yet.');
+        return;
+      }
+
+      const sorted = [...employees].sort();
+      document.getElementById('output').innerText = 'Sorted Names:\n' + sorted.join(', ');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Web Page</title>
+</head>
+<body>
+    <center><img src="https://sunbeaminfo.in/img/new/new_logo.png" alt=""></center>
+    <center><h1><font face =  "Algerian">Sunbeam Registration Form</font></h1></center>
+
+    <div>
+        <form >
+            <table align="center">
+            <tbody>
+                <tr>
+                    <td rowspan="10"><iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/Az5Bt3zUtiM?si=BdmIRI8fRE7N2adl" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                        web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+                    <td><label for="name"><b>Name: </b> </label></td>
+                    <td><input type="text" name="name" id="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="birthDate"><b>BirthDate: </b> </label></td>
+                    <td><input type="date" name="birthDate" id="birthDate" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email"><b>Email: </b> </label></td>
+                    <td><input type="email" name="name" id="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password"><b>Password: </b> </label></td>
+                    <td><input type="password" name="password" id="password" required></td>
+                </tr>
+                <tr>
+                    <td><label for="address"><b>Address: </b> </label></td>
+                    <td><textarea type="address" name="address" id="address" placeholder="'Anuda Chambers', 203 Shaniwar Peth, Near Gujar Hospital, Karad - 415 110,     Dist. Satara, MH-INDIA."></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for=""><b>Gender: </b></label></td>
+                    <td>
+                    <input type="radio" required name="gender" value = "gender">Male
+                    <input type="radio" required name="gender" value="gender">Female
+                </td>
+                </tr>
+                <tr>
+                    <td><label for="file"><b>Upload Photo: </b></label></td>
+                    <td><input type="file" name="file"></td>
+                </tr>
+                <tr>
+                    <td><label for="course"><b>Select your Course: </b></label></td>
+                    <td>
+                        <select name="course" id="course">
+                            <option value="1"><b>PG-DAC</b></option>
+                            <option value="2"><b>PG-DBDA</b></option>
+                            <option value="3"><b>PG-DMC</b></option>
+                            <option value="4"><b>PG-DITSS</b></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="skill"><b>Skill Set: </b></label></td>
+                    <td>
+                        <input type="checkbox" name="skill" id="skill">Java
+                        <input type="checkbox" name="skill" id="skill">CPP
+                        <input type="checkbox" name="skill" id="skill">OS
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button onclick="register()"><input type="submit" value = "Register"></button>
+                        <input type="reset" name="clear" value="Clear" id="clear">
+                    </td>
+                </tr>
+            </tbody>
+            </div>
+        </form>
+    </div>
+<script>
+  function register() {
+    const name = document.getElementById('name').value.trim();
+    const birthDate = document.getElementById('birthDate').value;
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const address = document.getElementById('address').value.trim();
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const course = document.getElementById('course').value;
+    const skills = [...document.querySelectorAll('input[type="checkbox"]:checked')].map(cb => cb.nextSibling.textContent.trim());
+
+    // jQuery selectors
+    const $form = $('form');
+    const $msg = $('<p style="color:red;"></p>');
+    $form.find('p').remove(); // Clear previous messages
+
+    // Validation flags
+    let valid = true;
+
+    // name validation
+    if (!/^[A-Za-z]{1,10}$/.test(name)) {
+      $msg.text('Name must contain only alphabets (max 10 characters)');
+      $('#name').after($msg.clone());
+      valid = false;
+    }
+
+    // Birthdate validation
+    const birth = new Date(birthDate);
+    const today = new Date();
+    const age = today.getFullYear() - birth.getFullYear();
+    const isPast = birth < today;
+    if (!birthDate || !isPast || age < 18) {
+      $msg.text('Birthdate must be in the past and age must be at least 18');
+      $('#birthDate').after($msg.clone());
+      valid = false;
+    }
+
+    // Password validation
+    if (!/^.*#.*\d.*$/.test(password) || password.length <= 8) {
+      $msg.text('Password must be >8 characters, contain # and at least one digit');
+      $('#password').after($msg.clone());
+      valid = false;
+    }
+
+    // Mandatory fields
+    if (!email || !address || !gender || !course || skills.length == 0) {
+      $msg.text('All fields are mandatory');
+      $form.append($msg.clone());
+      valid = false;
+    }
+
+    if (valid) {
+      alert('Registration successful!');
+    }
+};
+</script>
+</body>
+</html>

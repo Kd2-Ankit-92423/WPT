@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Date &amp; Greeting Web Page</h1>
+    </div>
+    <div style="color: red;">
+        <h2 id="currentDate"></h2>
+        <h2 id="greeting"></h2>
+        <h2 id="remDays"></h2>
+    </div>
+<script>
+    const now = new Date()
+
+    const currentDateString = now.toDateString()
+    const currentDate = document.getElementById('currentDate')
+    currentDate.innerText = `Today is ${currentDateString},`
+
+    function greeting(hour) {
+    if (hour >= 5 && hour < 12) return 'Welcome and Good Morning to you,';
+    if (hour >= 12 && hour < 17) return 'Welcome and Good Afternoon to you,';
+    if (hour >= 17 && hour < 21) return 'Welcome and Good Evening to you,';
+    if ((hour >= 21 && hour <= 23) || (hour >= 0 && hour < 5)) return 'Welcome and Good Night to you,';
+    }
+    
+    const currentHour = now.getHours()
+    const hour = document.getElementById('greeting')
+    //console.log(greeting(currentHour))
+    hour.innerText = greeting(currentHour)
+
+    function remDays(now){
+        const yearEnd = new Date(now.getFullYear(),11,31)
+        const oneDay = 1000 * 60 *60 * 24
+        const diff = yearEnd - now
+        return Math.ceil(diff/oneDay)
+    }
+
+    const leftDay = document.getElementById('remDays')
+    leftDay.innerText = `Number of the days left till end of the year: ${remDays(now)}`
+
+
+
+</script>
+</body>
+</html>

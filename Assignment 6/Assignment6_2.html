@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+    }
+    table {
+      border-collapse: separate;
+      border-spacing: 10px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+    }
+    input[readonly] {
+      background-color: #eee;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Calculator</h1>
+    <table>
+      <tr>
+        <td><label for="num1">Enter Number 1:</label></td>
+        <td><input type="number" id="num1" /></td>
+      </tr>
+      <tr>
+        <td><label for="num2">Enter Number 2:</label></td>
+        <td><input type="number" id="num2" /></td>
+      </tr>
+      <tr>
+        <td><label for="result">Result:</label></td>
+        <td><input type="text" id="result" readonly /></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button onclick="calculate('+')">Addition</button>
+          <button onclick="calculate('-')">Subtraction</button>
+          <button onclick="calculate('*')">Multiplication</button>
+          <button onclick="calculate('/')">Division</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function calculate(op) {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const resultBox = document.getElementById('result');
+
+      if (isNaN(num1) || isNaN(num2)) {
+        resultBox.value = 'Enter valid numbers';
+        return;
+      }
+
+      let result;
+      switch (op) {
+        case '+': result = num1 + num2; break;
+        case '-': result = num1 - num2; break;
+        case '*': result = num1 * num2; break;
+        case '/': result = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero'; break;
+      }
+
+      resultBox.value = result;
+    }
+  </script>
+</body>
+</html>
